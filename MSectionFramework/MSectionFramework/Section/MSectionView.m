@@ -189,6 +189,8 @@
     
     (![self checkAnimateType:M_SECTION_ANIMATE_TEXT_COLOR]) ? nil : [newCell updateTextColor:[self colorWithBeforePercent:widthPercent]];
     (![self checkAnimateType:M_SECTION_ANIMATE_TEXT_TRANSFORM]) ? nil : [newCell updateTransform:CGAffineTransformMakeScale(newValue, newValue)];
+    
+    [self updateIndicatorPositionWithPercent:widthPercent];
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
@@ -197,7 +199,6 @@
         NSUInteger widthIndex = observerOffset/ self.observerView.frame.size.width;
         CGFloat widthPercent = (observerOffset - (self.currentIndex) *  self.observerView.frame.size.width)/self.observerView.frame.size.width;
         [self updateCollectionViewCell];
-        [self updateIndicatorPositionWithPercent:widthPercent];
         self.currentIndex = widthIndex;
     }
 }
