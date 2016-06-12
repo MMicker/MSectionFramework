@@ -139,6 +139,9 @@
     //deal with current cell is not appear
     MSectionViewCell *cell = (MSectionViewCell *)[self.collectionView
                                                         cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_currentIndex inSection:0]];
+    
+    
+    //TODO NEED TO CHECK AGAIN
     if (!cell) {
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:_currentIndex inSection:0]
                                     atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
