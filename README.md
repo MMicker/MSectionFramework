@@ -35,4 +35,4 @@
 
 ##效果图展示
 为更好的展示效果，请耐心等待
-<img src="https://raw.githubusercontent.com/was0107/MDetailFramework/master/images/section.gif" width="50%">
+<img src="https://raw.githubusercontent.com/was0107/MSectionFramework/master/images/section.gif" width="50%">
