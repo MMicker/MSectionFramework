@@ -142,7 +142,8 @@
     
     
     //TODO NEED TO CHECK AGAIN
-    if (!cell) {
+    CGPoint point = [self.collectionView convertPoint:cell.center toView:self];
+    if (!cell || (point.x < 0 || point.x > CGRectGetWidth(self.bounds))) {
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:_currentIndex inSection:0]
                                     atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
         

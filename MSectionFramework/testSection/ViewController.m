@@ -40,7 +40,7 @@
         _sectionView.backgroundColor = [UIColor clearColor];
         [_sectionView beforColor:[UIColor lightGrayColor] after:[UIColor yellowColor]];
         _sectionView.observerView = self.collectionView;
-        _sectionView.secionPerPage = 5;
+        _sectionView.secionPerPage = 7;
         _sectionView.indicatorLineView.backgroundColor = [UIColor yellowColor];
         __weak __typeof__(self) weakSelf = self;
         _sectionView.block = ^(NSInteger index) {
