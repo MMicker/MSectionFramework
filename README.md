@@ -13,6 +13,23 @@
 ##依赖
 * 1、无
 
+##说明
+* 1、支持的动画类型如下，另默认情况是全部包含，亦可以通过自定义动画类型组合，选择合适的效果；
+```
+typedef NS_ENUM (NSUInteger , M_SECTION_ANIMATE_TYPE) {
+    M_SECTION_ANIMATE_TEXT_COLOR = 1 << 0,       //文本颜色
+    M_SECTION_ANIMATE_TEXT_TRANSFORM = 1 << 1,   //文本变换
+    M_SECTION_ANIMATE_INDICATOR_ALPHA = 1 << 2,  //指示条透明度
+    M_SECTION_ANIMATE_INDICATOR_SNAKE = 1 << 3,  //指示条蛇形增长
+    
+    M_SECTION_ANIMATE_DEFAULT =                  //默认值
+    M_SECTION_ANIMATE_TEXT_COLOR |
+    M_SECTION_ANIMATE_TEXT_TRANSFORM |
+    M_SECTION_ANIMATE_INDICATOR_ALPHA |
+    M_SECTION_ANIMATE_INDICATOR_SNAKE,
+};
+```
+
 ##举例
 
 ```

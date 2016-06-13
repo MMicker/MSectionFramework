@@ -1030,7 +1030,24 @@ body .markdown-body
 <ul>
 <li>1、无</li>
 </ul>
-<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>举例</h2>
+<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>说明</h2>
+<ul>
+<li>1、支持的动画类型如下，另默认情况是全部包含，亦可以通过自定义动画类型组合，选择合适的效果；<br />
+<pre><code>typedef NS_ENUM (NSUInteger , M_SECTION_ANIMATE_TYPE) {
+    M_SECTION_ANIMATE_TEXT_COLOR = 1 &lt;&lt; 0,       //文本颜色
+    M_SECTION_ANIMATE_TEXT_TRANSFORM = 1 &lt;&lt; 1,   //文本变换
+    M_SECTION_ANIMATE_INDICATOR_ALPHA = 1 &lt;&lt; 2,  //指示条透明度
+    M_SECTION_ANIMATE_INDICATOR_SNAKE = 1 &lt;&lt; 3,  //指示条蛇形增长
+
+    M_SECTION_ANIMATE_DEFAULT =                  //默认值
+    M_SECTION_ANIMATE_TEXT_COLOR |
+    M_SECTION_ANIMATE_TEXT_TRANSFORM |
+    M_SECTION_ANIMATE_INDICATOR_ALPHA |
+    M_SECTION_ANIMATE_INDICATOR_SNAKE,
+};
+</code></pre></li>
+</ul>
+<h2 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>举例</h2>
 <pre><code>- (MSectionView *) sectionView {
     if (!_sectionView) {
         _sectionView = [[MSectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 50)];
@@ -1048,6 +1065,6 @@ body .markdown-body
 }
 </code></pre>
 
-<h2 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>效果图展示</h2>
+<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>效果图展示</h2>
 <p>为更好的展示效果，请耐心等待<br />
 <img src="https://raw.githubusercontent.com/was0107/MSectionFramework/master/images/section.gif" width="50%"></p></article></body></html>
