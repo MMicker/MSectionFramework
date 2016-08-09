@@ -3,6 +3,10 @@
 [MSectionFramework](https://github.com/was0107/MSectionFramework),为实现Section的导航控件，目前大量APP中均有使用到此效果，
 如网易新闻的分类，淘宝中的微淘、社区，天猫中的关注、范儿等等；
 
+##效果图展示
+为更好的展示效果，请耐心等待<br>
+<img src="https://raw.githubusercontent.com/was0107/MSectionFramework/master/images/section.gif" width="50%">
+
 ##简介
 * 1、此包提供Section的Framework及testSection；
 * 2、支持标题颜色渐变过渡，标题的缩放，支持指示条的透明度及蛇形渐进；
@@ -50,6 +54,3 @@ typedef NS_ENUM (NSUInteger , M_SECTION_ANIMATE_TYPE) {
 }
 ```
 
-##效果图展示
-为更好的展示效果，请耐心等待<br>
-<img src="https://raw.githubusercontent.com/was0107/MSectionFramework/master/images/section.gif" width="50%">
