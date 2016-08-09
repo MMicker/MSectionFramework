@@ -51,5 +51,5 @@ typedef NS_ENUM (NSUInteger , M_SECTION_ANIMATE_TYPE) {
 ```
 
 ##效果图展示
-为更好的展示效果，请耐心等待
+为更好的展示效果，请耐心等待\n
 <img src="https://raw.githubusercontent.com/was0107/MSectionFramework/master/images/section.gif" width="50%">
