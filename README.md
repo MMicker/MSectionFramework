@@ -62,14 +62,14 @@ typedef NS_ENUM (NSUInteger , M_SECTION_ANIMATE_TYPE) {
 
 ##Change Log
 
-0.2
+V0.2
 -----
 
-1、废除`- (void) beforColor:(UIColor *) befor after:(UIColor *) after `,使用`- (void) setColors:(NSArray *) colors`;
-2、通过`Appearence`进行统一设置颜色及字体大小；
-3、支持`secionPerPage`和`padding`两种设置单元格间距的方法；
+* 1、废除`- (void) beforColor:(UIColor *) befor after:(UIColor *) after `,使用`- (void) setColors:(NSArray *) colors`;
+* 2、通过`Appearence`进行统一设置颜色及字体大小；
+* 3、支持`secionPerPage`和`padding`两种设置单元格间距的方法；
 
-0.1
+V0.1
 -----
-1、完成初稿，实现各种移动过程中的动画效果；
-2、开放相应的设置字体和颜色的方法；
+* 1、完成初稿，实现各种移动过程中的动画效果；
+* 2、开放相应的设置字体和颜色的方法；
