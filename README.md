@@ -10,8 +10,9 @@
 * 4、支持当前选中之后的回调，delegate或者block均可；
 * 5、支持关联到基于UIScrollView的控件，如UICollectionView、UIScrollView；
 
-##依赖
-* 1、无
+##效果图展示
+为更好的展示效果，请耐心等待
+<img src="https://raw.githubusercontent.com/was0107/MSectionFramework/master/images/section.gif" width="50%">
 
 ##说明
 * 1、支持的动画类型如下，另默认情况是全部包含，亦可以通过自定义动画类型组合，选择合适的效果；
@@ -30,26 +31,48 @@ typedef NS_ENUM (NSUInteger , M_SECTION_ANIMATE_TYPE) {
 };
 ```
 
-##举例
+##如何使用
 
 ```
+- (void) configSectionAppearence {
+    [[MSectionView appearance] setCellFont:[UIFont systemFontOfSize:14]];
+    [[MSectionView appearance] setBackgroundColor:[UIColor blackColor]];
+    [[MSectionView appearance] setIndicatorBackgroundColor:[UIColor yellowColor]];
+    [[MSectionView appearance] setColors:@[[UIColor whiteColor],[UIColor yellowColor]]];
+}
+
 - (MSectionView *) sectionView {
     if (!_sectionView) {
-        _sectionView = [[MSectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 50)];
-        _sectionView.backgroundColor = [UIColor clearColor];
-        [_sectionView beforColor:[UIColor lightGrayColor] after:[UIColor yellowColor]];
+        _sectionView = [[MSectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 42)];
         _sectionView.observerView = self.collectionView;
-        _sectionView.secionPerPage = 7;
-        _sectionView.indicatorLineView.backgroundColor = [UIColor yellowColor];
+//        _sectionView.secionPerPage = 3;
+        _sectionView.padding = 10;
         __weak __typeof__(self) weakSelf = self;
         _sectionView.block = ^(NSInteger index) {
-            NSLog(@"当前选中项为[%@] = %@", @(index), weakSelf.datas[index]);
+            NSLog(@"当前选中项为[%@] = %@", @(index),weakSelf.datas[index]);
         };
     }
     return _sectionView;
 }
+
+
 ```
 
-##效果图展示
-为更好的展示效果，请耐心等待
-<img src="https://raw.githubusercontent.com/was0107/MSectionFramework/master/images/section.gif" width="50%">
+
+##使用中的App
+
+黄金头条、华尔街见闻
+
+##Change Log
+
+0.2
+-----
+
+1、废除`- (void) beforColor:(UIColor *) befor after:(UIColor *) after `,使用`- (void) setColors:(NSArray *) colors`;
+2、通过`Appearence`进行统一设置颜色及字体大小；
+3、支持`secionPerPage`和`padding`两种设置单元格间距的方法；
+
+0.1
+-----
+1、完成初稿，实现各种移动过程中的动画效果；
+2、开放相应的设置字体和颜色的方法；

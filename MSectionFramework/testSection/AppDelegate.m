@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MSectionView.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self configSectionAppearence];
     return YES;
+}
+
+- (void) configSectionAppearence {
+    [[MSectionView appearance] setCellFont:[UIFont systemFontOfSize:14]];
+    [[MSectionView appearance] setBackgroundColor:[UIColor blackColor]];
+    [[MSectionView appearance] setIndicatorBackgroundColor:[UIColor yellowColor]];
+    [[MSectionView appearance] setColors:@[[UIColor whiteColor],[UIColor yellowColor]]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

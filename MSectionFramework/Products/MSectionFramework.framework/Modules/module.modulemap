@@ -1,0 +1,6 @@
+framework module MSectionFramework {
+  umbrella header "MSectionFramework.h"
+
+  export *
+  module * { export * }
+}

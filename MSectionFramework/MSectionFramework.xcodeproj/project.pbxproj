@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		6229CA831D87914A00A652BA /* SectionAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6229CA861D87914A00A652BA /* Build configuration list for PBXAggregateTarget "SectionAggregate" */;
+			buildPhases = (
+				6229CA881D87915900A652BA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = SectionAggregate;
+			productName = SectionAggregate;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		62DA4EAB1D0DAD3A00A0F7E6 /* MSectionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 62DA4EAA1D0DAD3A00A0F7E6 /* MSectionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62DA4EB51D0DAD7200A0F7E6 /* MSectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 62DA4EB31D0DAD7200A0F7E6 /* MSectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -183,6 +197,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Micker;
 				TargetAttributes = {
+					6229CA831D87914A00A652BA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					62DA4EA61D0DAD3A00A0F7E6 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -205,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				62DA4EA61D0DAD3A00A0F7E6 /* MSectionFramework */,
+				6229CA831D87914A00A652BA /* SectionAggregate */,
 				62DA4EBE1D0DADFA00A0F7E6 /* testSection */,
 			);
 		};
@@ -229,6 +247,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6229CA881D87915900A652BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		62DA4EA21D0DAD3A00A0F7E6 /* Sources */ = {
@@ -272,6 +306,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6229CA841D87914A00A652BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6229CA851D87914A00A652BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		62DA4EAD1D0DAD3A00A0F7E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -425,6 +473,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6229CA861D87914A00A652BA /* Build configuration list for PBXAggregateTarget "SectionAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6229CA841D87914A00A652BA /* Debug */,
+				6229CA851D87914A00A652BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		62DA4EA11D0DAD3A00A0F7E6 /* Build configuration list for PBXProject "MSectionFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -441,6 +497,7 @@
 				62DA4EB11D0DAD3A00A0F7E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62DA4ED31D0DADFA00A0F7E6 /* Build configuration list for PBXNativeTarget "testSection" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +506,7 @@
 				62DA4ED51D0DADFA00A0F7E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

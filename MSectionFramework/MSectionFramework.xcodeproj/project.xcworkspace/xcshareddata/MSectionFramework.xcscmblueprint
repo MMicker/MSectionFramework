@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5C26724BAE1C135D3E24F49A3B2945948D846ED9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5C26724BAE1C135D3E24F49A3B2945948D846ED9" : 0,
+    "C455C293E03AB37D95D8271CF71939C7BB7DF3B0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E4A64781-82D4-4240-9BB1-B47DF3241753",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5C26724BAE1C135D3E24F49A3B2945948D846ED9" : "MSectionFramework\/",
+    "C455C293E03AB37D95D8271CF71939C7BB7DF3B0" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MSectionFramework",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MSectionFramework\/MSectionFramework.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:was0107\/MSectionFramework.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5C26724BAE1C135D3E24F49A3B2945948D846ED9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:was0107\/dallas.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C455C293E03AB37D95D8271CF71939C7BB7DF3B0"
+    }
+  ]
+}
