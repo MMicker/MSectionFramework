@@ -205,6 +205,7 @@
 					};
 					62DA4EBE1D0DADFA00A0F7E6 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 432R882V66;
 					};
 				};
 			};
@@ -450,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 432R882V66;
 				INFOPLIST_FILE = testSection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -462,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 432R882V66;
 				INFOPLIST_FILE = testSection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -480,6 +483,7 @@
 				6229CA851D87914A00A652BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62DA4EA11D0DAD3A00A0F7E6 /* Build configuration list for PBXProject "MSectionFramework" */ = {
 			isa = XCConfigurationList;
